@@ -1,0 +1,11 @@
+# The following syntax will create a DHCP pool, exclude addresses from the pool that we wish to reserve, and enable the DHCP service on a Cisco IOS device. The subnet 10.0.0.0/24 was chosen for this example. 
+
+!
+ip dhcp excluded-address 10.0.0.1-100
+!
+ip dhcp pool LAN
+network 10.0.0.0 255.255.255.0
+default-router 10.0.0.1
+dns-server 8.8.8.8
+lease 0 1
+!
